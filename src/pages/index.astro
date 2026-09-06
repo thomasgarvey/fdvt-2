@@ -18,6 +18,13 @@ const emptyCounties = [...new Set(stations.map((s) => s.county).filter(Boolean))
   .filter((c) => !stations.some((s) => s.county === c && s.photo))
   .sort();
 
+// The one town we have been through door to door, and the clearest evidence that
+// the state's list has to be checked on foot. Derived from the two data files so
+// the sentence in the About section cannot go stale as more are retired.
+const FIELD_TOWN = "Colchester";
+const fieldWrong = retiredStations.filter((s) => s.town === FIELD_TOWN).length;
+const fieldListed = fieldWrong + stations.filter((s) => s.town === FIELD_TOWN).length;
+
 const ledger = [
   { n: stations.length, label: "Stations recorded" },
   { n: count("town"), label: "Towns" },
@@ -76,7 +83,7 @@ const MARK_NEEDS = "#5C6469";
     <title>Vermont Fire Stations</title>
     <meta
       name="description"
-      content="A photographic record of the stations, apparatus, and history of the Green Mountain State — every fire station in Vermont, town by town."
+      content="Every fire station in Vermont, town by town — a photographic record of the state's plainest, most useful architecture, with department and address for each."
     />
     <script is:inline>
       try {
@@ -282,15 +289,31 @@ const MARK_NEEDS = "#5C6469";
         <div class="wrap about">
           <div>
             <p class="stamp">About the record</p>
-            <h2>Every Vermont fire station, in one place.</h2>
+            <h2>Built to be useful, not to be looked at.</h2>
             <p>
-              Vermont's fire service is overwhelmingly volunteer: more than two hundred
-              departments, most of them staffed by neighbours, working out of buildings
-              scattered across {count("town")} towns. No single place has ever listed them all.
+              Almost no fire station in Vermont was designed to be admired. A concrete-block
+              bay behind the town office, a barn with the doors cut wider, a pole building with
+              the department's name stencilled over the bay — they are built to get a truck out
+              fast and to be paid for by a town of two thousand people. Set {stations.length} of
+              them side by side and that plainness becomes the point: a century of how small
+              places build when nobody is watching.
             </p>
             <p>
-              This is that place — every station in the state's E911 records, mapped,
-              photographed as we get to them, with the department and address attached.
+              The service here is overwhelmingly volunteer — more than two hundred departments,
+              most of them staffed by neighbours, working out of buildings scattered across
+              {" "}{count("town")} towns. Nobody had ever put them all in one place.
+            </p>
+            <p>
+              Three of us build and keep this: Jaunca, Nicki and Tom. Tom does most of the
+              driving and most of the reading — what a building is made of, what it was before,
+              which department runs it and which ones it has merged with along the way.
+            </p>
+            <p>
+              Going to look is the only way to be sure. The state lists {fieldListed} fire
+              stations in {FIELD_TOWN}; {fieldWrong} of them turned out to be a food shelf, the
+              water department and somebody's outbuilding. Swanton and Highgate run stations the
+              state file doesn't mention at all. Every correction here came from standing in
+              front of the building.
             </p>
             <p class="fine">
               Station locations come from VT E911 / VCGI and OpenStreetMap. Points the state still
@@ -1110,7 +1133,7 @@ const MARK_NEEDS = "#5C6469";
     margin: 0 0 1rem;
     font-size: clamp(1.6rem, 2.8vw, 2.2rem);
     line-height: 1.14;
-    max-width: 18ch;
+    max-width: 22ch;
   }
   .about p {
     margin: 0 0 1rem;
