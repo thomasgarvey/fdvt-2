@@ -11,6 +11,13 @@ import Analytics from "../components/Analytics.astro";
 const count = (key: "town" | "county") =>
   new Set(stations.map((s) => s[key]).filter(Boolean)).size;
 
+// The gap is the point of the appeal: most of the state is still unphotographed,
+// and it is concentrated — a handful of counties have nothing at all.
+const awaiting = stations.length - photographedCount;
+const emptyCounties = [...new Set(stations.map((s) => s.county).filter(Boolean))]
+  .filter((c) => !stations.some((s) => s.county === c && s.photo))
+  .sort();
+
 const ledger = [
   { n: stations.length, label: "Stations recorded" },
   { n: count("town"), label: "Towns" },
@@ -22,6 +29,11 @@ const ledger = [
 
 const titleCase = (s: string) =>
   s.toLowerCase().replace(/\b[a-z]/g, (c) => c.toUpperCase()).replace(/\bVt\b/g, "VT");
+// The caption names the building — "Starksboro First Response"; the department
+// names the organisation that runs it, and one department can run several. So
+// the caption wins wherever a single photograph is being labelled.
+const label = (p: (typeof photosData)[number]) =>
+  p.caption?.trim() || p.department?.name || "Fire station";
 const place = (p: (typeof photosData)[number]) =>
   [p.department?.city, p.department?.county && `${titleCase(p.department.county)} County`]
     .filter(Boolean)
@@ -126,7 +138,7 @@ const MARK_NEEDS = "#5C6469";
     <main>
       <section class="hero">
         <div class="hero-photo" style={`background-image:url("${hero.src}")`} role="img"
-          aria-label={`${hero.department?.name ?? hero.caption}, ${place(hero)}`}></div>
+          aria-label={`${label(hero)}, ${place(hero)}`}></div>
         <div class="wrap hero-wrap">
           <div class="panel">
             <h1>Vermont's fire stations.</h1>
@@ -150,11 +162,37 @@ const MARK_NEEDS = "#5C6469";
             <div class="fig"><b>{s.n.toLocaleString()}</b><span>{s.label}</span></div>
           ))}
           <p class="plate-credit">
-            Above: {hero.department?.name ?? hero.caption}{place(hero) && <>, {place(hero)}</>}
+            Above: {label(hero)}{place(hero) && <>, {place(hero)}</>}
             {hero.photographer && <> · Photograph by {hero.photographer}</>}
           </p>
         </div>
       </div>
+
+      <section class="appeal" id="contribute">
+        <div class="wrap appeal-in">
+          <div>
+            <p class="stamp">Help finish it</p>
+            <h2>{awaiting.toLocaleString()} stations are still waiting.</h2>
+            <p>
+              {photographedCount} of {stations.length} have been photographed.
+              {emptyCounties.length > 0 && (
+                <>
+                  {" "}Not a single station has been photographed yet in{" "}
+                  {emptyCounties.slice(0, -1).join(", ")}
+                  {emptyCounties.length > 1 ? " or " : ""}
+                  {emptyCounties[emptyCounties.length - 1]}.
+                </>
+              )}
+              {" "}If you pass one, a photograph from a phone is plenty — you will be
+              credited beside it.
+            </p>
+          </div>
+          <div class="appeal-do">
+            <a class="appeal-btn" href="/contact#photo">Send a photograph →</a>
+            <a class="appeal-alt" href="/stations">See which are missing</a>
+          </div>
+        </div>
+      </section>
 
       <section class="sec" id="map">
         <div class="wrap">
@@ -186,7 +224,7 @@ const MARK_NEEDS = "#5C6469";
         <div class="wrap">
           <div class="sec-head">
             <p class="stamp">Station of the week</p>
-            <h2>{featured.department?.name ?? featured.caption}</h2>
+            <h2>{label(featured)}</h2>
             <p class="sec-sub">{place(featured)}</p>
           </div>
 
@@ -231,7 +269,7 @@ const MARK_NEEDS = "#5C6469";
                   style={`background-image:url("${p.thumb}")`}
                   aria-label={`${p.caption} — open the station record`}></a>
                 <figcaption>
-                  <h3>{p.department?.name ?? p.caption}</h3>
+                  <h3>{label(p)}</h3>
                   <p>{place(p) || titleCase(p.town ?? "")}{p.dateTaken && <> · {p.dateTaken}</>}</p>
                 </figcaption>
               </figure>
@@ -753,6 +791,72 @@ const MARK_NEEDS = "#5C6469";
   }
 
   /* ---- sections ------------------------------------------------------- */
+  .appeal {
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+  }
+  .appeal-in {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+    padding: 1.9rem 0;
+  }
+  .appeal h2 {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: clamp(1.25rem, 2.4vw, 1.7rem);
+    line-height: 1.2;
+    margin: 0.15rem 0 0.5rem;
+  }
+  .appeal p {
+    margin: 0;
+    max-width: 60ch;
+    color: var(--ink-2);
+    font-size: 0.95rem;
+  }
+  .appeal-do {
+    margin-left: auto;
+    display: grid;
+    gap: 0.55rem;
+    justify-items: start;
+    flex: none;
+  }
+  .appeal-btn {
+    display: inline-block;
+    background: var(--red);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    padding: 0.7rem 1.15rem;
+    white-space: nowrap;
+  }
+  .appeal-btn:hover {
+    background: var(--red-deep);
+  }
+  .appeal-alt {
+    font-size: 0.82rem;
+    color: var(--ink-2);
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+    white-space: nowrap;
+  }
+  .appeal-alt:hover {
+    color: var(--ink);
+    border-color: var(--red);
+  }
+  @media (max-width: 780px) {
+    .appeal-in {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1.2rem;
+    }
+    .appeal-do {
+      margin-left: 0;
+    }
+  }
+
   .sec {
     padding: 4.4rem 0;
   }
