@@ -34,11 +34,5 @@
     "address": "318 US Route 2",
     "town": "South Hero",
     "reason": "Former South Hero station; the department operates from 131 COMMUNITY LN. Note this E911 record is recent (MAPYEAR 2026-02-03), so the layer is not stale here — it still classifies the old building as a fire station."
-  },
-  {
-    "esiteid": 248591,
-    "address": "397 Jerusalem Rd",
-    "town": "Starksboro",
-    "reason": ""
   }
 ]
