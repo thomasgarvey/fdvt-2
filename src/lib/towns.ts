@@ -11,8 +11,14 @@ export type Department = (typeof departmentsData)[number];
 export interface Boundary {
   name: string;
   fips: number;
+  /** Learned from the roster at sync time; null for a town we have no station in. */
+  county: string | null;
+  /** Whether any station in the roster sits in this town. */
+  onRoster: boolean;
   acres: number;
   sqmi: number;
+  /** Bounding-box centre, where a label sits. */
+  centre: number[];
   rings: number[][][];
 }
 
@@ -91,34 +97,94 @@ export const BURN_RULE =
   'place to start.';
 
 /**
- * Projects a town outline into an SVG path. Equirectangular with a cos(lat)
- * correction on x, which at the width of a Vermont town is indistinguishable
- * from a proper projection and needs no dependency.
+ * A town drawn inside its county, which is the context a town outline on its
+ * own cannot give: who the neighbours are, where the next station is, and how
+ * far away it sits. Equirectangular with a cos(lat) correction on x — at the
+ * width of a Vermont county that is indistinguishable from a real projection
+ * and needs no dependency.
  */
-export function outlinePath(rings: number[][][], size = 300, pad = 6) {
-  const pts = rings.flat();
+export function countyMap(subject: Town, width = 680, maxHeight = 620, pad = 14) {
+  const all = Object.values(townsData) as Boundary[];
+  // Fall back to the town alone when we have no county for it, so a page still
+  // renders rather than disappearing.
+  const inCounty = subject.county
+    ? all.filter((t) => t.county === subject.county)
+    : subject.boundary
+      ? [subject.boundary]
+      : [];
+  if (!inCounty.length) return null;
+
+  const pts = inCounty.flatMap((t) => t.rings.flat());
   const lat0 = (Math.min(...pts.map((p) => p[1])) + Math.max(...pts.map((p) => p[1]))) / 2;
   const k = Math.cos((lat0 * Math.PI) / 180);
   const xs = pts.map((p) => p[0] * k);
   const ys = pts.map((p) => p[1]);
   const [minX, maxX] = [Math.min(...xs), Math.max(...xs)];
   const [minY, maxY] = [Math.min(...ys), Math.max(...ys)];
-  const span = Math.max(maxX - minX, maxY - minY) || 1;
-  const scale = (size - pad * 2) / span;
-  // Centre the shorter axis; y flips because SVG counts downward.
-  const offX = pad + ((size - pad * 2) - (maxX - minX) * scale) / 2;
-  const offY = pad + ((size - pad * 2) - (maxY - minY) * scale) / 2;
+  // Fit the width, then let the height follow the county's real shape rather
+  // than padding a fixed box — a tall county like Chittenden otherwise renders
+  // as a small shape stranded in white space.
+  const wSpan = maxX - minX || 1;
+  const hSpan = maxY - minY || 1;
+  const scale = Math.min((width - pad * 2) / wSpan, (maxHeight - pad * 2) / hSpan);
+  const height = Math.round(hSpan * scale + pad * 2);
+  const offX = pad + (width - pad * 2 - wSpan * scale) / 2;
+  const offY = pad;
   const project = (lng: number, lat: number): [number, number] => [
     offX + (lng * k - minX) * scale,
     offY + (maxY - lat) * scale,
   ];
-  const d = rings
-    .map((r) => r.map(([lng, lat], i) => {
-      const [x, y] = project(lng, lat);
-      return `${i ? 'L' : 'M'}${x.toFixed(1)} ${y.toFixed(1)}`;
-    }).join('') + 'Z')
-    .join('');
-  return { d, project, size };
+  const pathFor = (rings: number[][][]) =>
+    rings
+      .map((r) => r.map(([lng, lat], i) => {
+        const [x, y] = project(lng, lat);
+        return `${i ? 'L' : 'M'}${x.toFixed(1)} ${y.toFixed(1)}`;
+      }).join('') + 'Z')
+      .join('');
+
+  const subjectKey = normTown(subject.name);
+  const shapes = inCounty.map((t) => {
+    const [cx, cy] = project(t.centre[0], t.centre[1]);
+    const xsT = t.rings.flat().map((p) => p[0] * k);
+    const widthPx = (Math.max(...xsT) - Math.min(...xsT)) * scale;
+    return {
+      name: t.name,
+      isSubject: normTown(t.name) === subjectKey,
+      onRoster: t.onRoster,
+      d: pathFor(t.rings),
+      cx,
+      cy,
+      // Around Burlington the towns are small and the labels collide. Only
+      // label a town wide enough to hold its own name at 8px.
+      labelled: widthPx > t.name.length * 4.6,
+      slug: slugify(t.name),
+    };
+  });
+
+  // Every station in the county, so mutual aid has a shape on the page.
+  const points = stations
+    .filter((s) => !subject.county || s.county === subject.county)
+    .map((s) => {
+      const [x, y] = project(s.lng, s.lat);
+      return {
+        x, y,
+        mine: normTown(s.town) === subjectKey,
+        photo: !!s.photo,
+        label: `${s.name} — ${s.address}, ${s.town}`,
+        slug: s.slug,
+      };
+    });
+
+  // A scale bar in whole miles: one degree of latitude is 69.0 miles, and y is
+  // projected from raw latitude, so pixels-per-mile falls straight out.
+  const pxPerMile = scale / 69.0;
+  const miles = [1, 2, 5, 10, 20, 50].find((m) => m * pxPerMile > width * 0.15) ?? 50;
+
+  return {
+    width, height, shapes, points,
+    scale: { miles, px: miles * pxPerMile },
+    county: subject.county,
+  };
 }
 
 export { titleCase };
