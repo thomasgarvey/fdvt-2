@@ -18,6 +18,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -43,6 +45,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -68,6 +72,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -93,6 +99,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -118,6 +126,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -143,6 +153,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -168,6 +180,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -193,6 +207,8 @@
       "paidPerCall": 20,
       "career": 18
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -218,6 +234,8 @@
       "paidPerCall": 30,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -243,6 +261,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -268,6 +288,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -293,6 +315,8 @@
       "paidPerCall": 18,
       "career": 1
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -318,6 +342,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -343,6 +369,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -368,6 +396,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -393,6 +423,8 @@
       "paidPerCall": 29,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -418,6 +450,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -443,6 +477,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -468,6 +504,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -493,6 +531,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -518,6 +558,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -543,6 +585,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -568,6 +612,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -593,6 +639,8 @@
       "paidPerCall": 35,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -618,6 +666,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -643,6 +693,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -668,6 +720,8 @@
       "paidPerCall": 0,
       "career": 83
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -693,6 +747,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -718,6 +774,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -743,6 +801,8 @@
       "paidPerCall": 14,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -768,6 +828,8 @@
       "paidPerCall": 0,
       "career": 1
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -793,6 +855,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -818,6 +882,8 @@
       "paidPerCall": 17,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -843,6 +909,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -868,6 +936,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -893,6 +963,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -918,6 +990,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -943,6 +1017,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -968,6 +1044,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -993,6 +1071,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1018,6 +1098,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1043,6 +1125,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1068,6 +1152,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1093,6 +1179,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1118,6 +1206,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1143,6 +1233,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1168,6 +1260,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1193,6 +1287,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1218,6 +1314,8 @@
       "paidPerCall": 28,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1243,6 +1341,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1268,6 +1368,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1293,6 +1395,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1318,6 +1422,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1343,6 +1449,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1368,6 +1476,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1393,6 +1503,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1418,6 +1530,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1443,6 +1557,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1468,6 +1584,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1493,6 +1611,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1518,6 +1638,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1543,6 +1665,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1568,6 +1692,8 @@
       "paidPerCall": 28,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1593,6 +1719,8 @@
       "paidPerCall": 45,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1618,6 +1746,8 @@
       "paidPerCall": 45,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1643,6 +1773,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1668,6 +1800,8 @@
       "paidPerCall": 31,
       "career": 1
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1693,6 +1827,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1718,6 +1854,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1743,6 +1881,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1768,6 +1908,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1793,6 +1935,8 @@
       "paidPerCall": 20,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1818,6 +1962,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1843,6 +1989,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1868,6 +2016,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1893,6 +2043,8 @@
       "paidPerCall": 22,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1918,6 +2070,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1943,6 +2097,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1968,6 +2124,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -1993,6 +2151,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2018,6 +2178,8 @@
       "paidPerCall": 20,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2043,6 +2205,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2068,6 +2232,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2093,6 +2259,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2118,6 +2286,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2143,6 +2313,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2168,6 +2340,8 @@
       "paidPerCall": 25,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2193,6 +2367,8 @@
       "paidPerCall": 20,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2218,6 +2394,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2243,6 +2421,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2268,6 +2448,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2293,6 +2475,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2318,6 +2502,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2343,6 +2529,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2368,6 +2556,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2393,6 +2583,8 @@
       "paidPerCall": 33,
       "career": 2
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2418,6 +2610,8 @@
       "paidPerCall": 26,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2443,6 +2637,8 @@
       "paidPerCall": 25,
       "career": 7
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2468,6 +2664,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2493,6 +2691,8 @@
       "paidPerCall": 16,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2518,6 +2718,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2543,6 +2745,8 @@
       "paidPerCall": 30,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2568,6 +2772,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2593,6 +2799,8 @@
       "paidPerCall": 25,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2618,6 +2826,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2643,6 +2853,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2668,6 +2880,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2693,6 +2907,8 @@
       "paidPerCall": 35,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2718,6 +2934,8 @@
       "paidPerCall": 5,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2743,6 +2961,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2768,6 +2988,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2793,6 +3015,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2818,6 +3042,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2843,6 +3069,8 @@
       "paidPerCall": 12,
       "career": 17
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2868,6 +3096,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2893,6 +3123,8 @@
       "paidPerCall": 24,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2918,6 +3150,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2943,6 +3177,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2968,6 +3204,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -2993,6 +3231,8 @@
       "paidPerCall": 18,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3018,6 +3258,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3043,6 +3285,8 @@
       "paidPerCall": 30,
       "career": 1
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3068,6 +3312,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3093,6 +3339,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3118,6 +3366,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3143,6 +3393,8 @@
       "paidPerCall": 25,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3168,6 +3420,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3193,6 +3447,8 @@
       "paidPerCall": 21,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3218,6 +3474,8 @@
       "paidPerCall": 31,
       "career": 1
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3243,6 +3501,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3268,6 +3528,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3293,6 +3555,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3318,6 +3582,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3343,6 +3609,8 @@
       "paidPerCall": 20,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3368,6 +3636,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3393,6 +3663,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3418,6 +3690,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3443,6 +3717,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3468,6 +3744,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3493,6 +3771,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3518,6 +3798,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3543,6 +3825,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3568,6 +3852,8 @@
       "paidPerCall": 26,
       "career": 1
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3593,6 +3879,8 @@
       "paidPerCall": 25,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3618,6 +3906,8 @@
       "paidPerCall": 20,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3643,6 +3933,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3668,6 +3960,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3693,6 +3987,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3718,11 +4014,54 @@
       "paidPerCall": 18,
       "career": 0
     },
+    "budget": 446154,
+    "budgetLines": [
+      {
+        "label": "Fire capital reserve",
+        "amount": 180000
+      },
+      {
+        "label": "Salaries",
+        "amount": 70000
+      },
+      {
+        "label": "2018 engine, principal",
+        "amount": 48572
+      },
+      {
+        "label": "Fire department needs assessment",
+        "amount": 25000
+      },
+      {
+        "label": "Fleet maintenance",
+        "amount": 15000
+      },
+      {
+        "label": "Equipment purchase",
+        "amount": 15000
+      },
+      {
+        "label": "General/PACIF insurance",
+        "amount": 13425
+      },
+      {
+        "label": "2005 engine bond",
+        "amount": 10000
+      },
+      {
+        "label": "Radio repair and replacement",
+        "amount": 10000
+      },
+      {
+        "label": "Maintenance, general",
+        "amount": 10000
+      }
+    ],
     "joining": "Open to Richmond residents. Meet a current firefighter first, then submit an application and start attending meetings and training while a background check and physical go through. A six-month probationary period ends with a vote of the current members.\n\nBusiness meeting is the first Monday of the month, 7–9.30pm. Training is the third and fourth Mondays, same hours. Members respond to calls as they are available.\n\nPay starts at $15.01 an hour for training attended and calls answered, with first-responder discounts and benefits.\n\nSource: the department's own joining page, richmondvt.gov, read September 2026.",
     "burnPermits": "Vermont requires a Permit to Kindle Fire from the town's Forest Fire Warden for anything larger than a campfire. Two exceptions: when snow covers the ground at the burn site, and when the fire is at least 200 feet from anything that will carry flame. Wardens can suspend burning outright when fire danger is high.\n\nIn Richmond, permits go through Shelburne Dispatch: 802-985-8051.\n\nThe warden system dates to 1904, when Vermont made each town responsible for preventing and fighting its own forest fires under a warden appointed by the Commissioner of Forests, Parks and Recreation with the selectboard's approval. Wardens serve five-year terms.\n\nSources: richmondvt.gov; Vermont Department of Forests, Parks and Recreation.",
     "history": "Dennis Gile retired in 2025 after nine years as chief and fifty-seven years with the department. Jerry Levesque was appointed to succeed him and has put the department's attention on recruiting and keeping firefighters. A study of the department was carried out in early 2025; the chief and the selectboard are working from it.\n\nThe department is wholly owned by the Town of Richmond — the town owns the building and the equipment, and the members are volunteers paid an hourly rate for calls and training.\n\nSource: Town of Richmond, 231st Annual Report, fiscal year 2024–2025.",
     "callsNote": "Not obtained. Vermont requires every department to report its incidents to the state under 20 V.S.A., but the Division of Fire Safety publishes statewide totals only — 26,778 EMS calls across Vermont in 2024, against 28,057 in 2023 — with no breakdown by department. The VFIRS system that holds the per-department figures is open to fire departments, not to the public.\n\nRichmond's own numbers would come from a public records request to the Division of Fire Safety, or from asking the department.",
-    "budgetNote": "Richmond voters approved a total town budget of $4,870,565 for fiscal year 2026. The fire department's share of that is not broken out in any source we have been able to read, and the figure recorded against this department carries no note saying what it covers — so it is not shown as a department budget here.\n\nSource: Town of Richmond, annual town meeting, March 2026."
+    "budgetNote": "Richmond voters approved $446,154 for the fire department in fiscal year 2026 — 3.37% less than the $461,718 budgeted the year before, out of a total town budget of $4,870,565.\n\nTwo fifths of it never reaches an incident. $180,000 goes to the capital reserve and $58,572 pays down the 2018 engine, principal and interest, which is what a town of four thousand people does instead of buying a fire truck outright. Salaries — the hourly rate members are paid for calls and training — come to $70,000, up 22.81% on the year. The single new line is $25,000 for a needs assessment of the department, the study the chief and selectboard have been working from.\n\nA separate $38,033 sits under town administration as \"fire protection\". That is the fee the town pays its own water and wastewater department for fire flow, not money the fire department spends.\n\nSource: Town of Richmond, FY26 Budgeted Expenses, presented to the selectboard January 2025."
   },
   {
     "id": "recHbmPbA6yf7NShl",
@@ -3743,6 +4082,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3768,6 +4109,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3793,6 +4136,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3818,6 +4163,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3843,6 +4190,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3868,6 +4217,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3893,6 +4244,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3918,6 +4271,8 @@
       "paidPerCall": 18,
       "career": 13
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3943,6 +4298,8 @@
       "paidPerCall": 30,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3968,6 +4325,8 @@
       "paidPerCall": 7,
       "career": 11
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -3993,6 +4352,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4018,6 +4379,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4043,6 +4406,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4068,6 +4433,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4093,6 +4460,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4118,6 +4487,8 @@
       "paidPerCall": 31,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4143,6 +4514,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4168,6 +4541,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4193,6 +4568,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4218,6 +4595,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4243,6 +4622,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4268,6 +4649,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4293,6 +4676,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4318,6 +4703,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4343,6 +4730,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4368,6 +4757,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4393,6 +4784,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4418,6 +4811,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4443,6 +4838,8 @@
       "paidPerCall": 24,
       "career": 13
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4468,6 +4865,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4493,6 +4892,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4518,6 +4919,8 @@
       "paidPerCall": 15,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4543,6 +4946,8 @@
       "paidPerCall": 46,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4568,6 +4973,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4593,6 +5000,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4618,6 +5027,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4643,6 +5054,8 @@
       "paidPerCall": 33,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4668,6 +5081,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4693,6 +5108,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4718,6 +5135,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4743,6 +5162,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4768,6 +5189,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4793,6 +5216,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4818,6 +5243,8 @@
       "paidPerCall": 35,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4843,6 +5270,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4868,6 +5297,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4893,6 +5324,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4918,6 +5351,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4943,6 +5378,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4968,6 +5405,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -4993,6 +5432,8 @@
       "paidPerCall": 23,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5018,6 +5459,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5043,6 +5486,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5068,6 +5513,8 @@
       "paidPerCall": 53,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5093,6 +5540,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5118,6 +5567,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5143,6 +5594,8 @@
       "paidPerCall": 11,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5168,6 +5621,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5193,6 +5648,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5218,6 +5675,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5243,6 +5702,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5268,6 +5729,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5293,6 +5756,8 @@
       "paidPerCall": 13,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5318,6 +5783,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5343,6 +5810,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5368,6 +5837,8 @@
       "paidPerCall": 20,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5393,6 +5864,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5418,6 +5891,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5443,6 +5918,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5468,6 +5945,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5493,6 +5972,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5518,6 +5999,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5543,6 +6026,8 @@
       "paidPerCall": 10,
       "career": 14
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5568,6 +6053,8 @@
       "paidPerCall": 32,
       "career": 1
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5593,6 +6080,8 @@
       "paidPerCall": null,
       "career": null
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5618,6 +6107,8 @@
       "paidPerCall": 25,
       "career": 13
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5643,6 +6134,8 @@
       "paidPerCall": 24,
       "career": 1
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5668,6 +6161,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5693,6 +6188,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5718,6 +6215,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,
@@ -5743,6 +6242,8 @@
       "paidPerCall": 0,
       "career": 0
     },
+    "budget": null,
+    "budgetLines": [],
     "joining": null,
     "burnPermits": null,
     "history": null,

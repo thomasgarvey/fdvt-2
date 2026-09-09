@@ -325,6 +325,18 @@ const departments = depts
         paidPerCall: num(f[' Active Firefighters - Paid per Call']),
         career: num(f[' Active Firefighters - Career']),
       },
+      budget: num(f['2026 Budget']),
+      // "Label | Amount" per line in Airtable; parsed here so the page renders a
+      // table rather than each town inventing its own formatting. A row that
+      // does not parse is dropped rather than rendered as a broken figure.
+      budgetLines: (str(f['Budget Lines']) ?? '')
+        .split('\n')
+        .map((l) => l.split('|').map((c) => c.trim()))
+        .filter((c) => c.length === 2 && c[0] && /^\d+$/.test(c[1]))
+        .map(([label, amount]) => ({ label, amount: Number(amount) }))
+        // Sorted here so whoever fills the field can type the lines in any
+        // order and the table still reads largest first.
+        .sort((a, b) => b.amount - a.amount),
       joining: str(f.Joining),
       burnPermits: str(f['Burn Permits']),
       history: str(f.History),

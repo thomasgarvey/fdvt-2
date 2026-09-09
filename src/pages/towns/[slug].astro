@@ -37,6 +37,7 @@ const facts: [string, string][] = [
   ["Photographed", `${town.photographed} of ${town.stations.length}`],
   town.boundary ? ["Area", `${num(town.boundary.acres)} acres · ${town.boundary.sqmi} sq mi`] : null,
   members != null ? ["Firefighters", String(members)] : null,
+  dept?.budget ? ["Budget, FY2026", `$${num(dept.budget)}`] : null,
   dept?.type ? ["Department type", dept.type] : null,
   dept?.fdid ? ["FDID", dept.fdid] : null,
   dept?.founded ? ["Founded", String(dept.founded)] : null,
@@ -168,10 +169,34 @@ const description = dept
       </section>
     )}
 
-    {dept?.budgetNote && (
+    {(dept?.budgetNote || dept?.budgetLines?.length) && (
       <section class="block" aria-labelledby="b-h">
         <h2 id="b-h">Money</h2>
-        {dept.budgetNote.split("\n\n").map((p) => <p>{p}</p>)}
+        {dept.budgetNote?.split("\n\n").map((p) => <p>{p}</p>)}
+        {dept.budgetLines?.length > 0 && (
+          <>
+            <table class="lines">
+              <caption>Largest lines, fiscal year 2026</caption>
+              <tbody>
+                {dept.budgetLines.map((l) => (
+                  <tr>
+                    <th scope="row">{l.label}</th>
+                    <td>
+                      ${num(l.amount)}
+                      <span class="bar" style={`--w:${Math.round((l.amount / dept.budgetLines[0].amount) * 100)}%`} aria-hidden="true"></span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            {dept.budget && (
+              <p class="fine">
+                The {dept.budgetLines.length} largest lines, against a department total of
+                {" "}${num(dept.budget)}.
+              </p>
+            )}
+          </>
+        )}
       </section>
     )}
 
@@ -271,6 +296,26 @@ const description = dept
   .ad { color: var(--ink-3); font-size: 0.86rem; }
   .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; background: var(--ink-3); }
   .dot[data-has="yes"] { background: var(--red); }
+
+  .lines { width: 100%; border-collapse: collapse; margin: 0.4rem 0 0; font-size: 0.9rem; }
+  .lines caption {
+    text-align: left; font-size: 0.72rem; letter-spacing: 0.09em;
+    text-transform: uppercase; color: var(--ink-3); padding-bottom: 0.5rem;
+  }
+  .lines th {
+    text-align: left; font-weight: 400; padding: 0.42rem 0.8rem 0.42rem 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .lines td {
+    text-align: right; padding: 0.42rem 0; border-bottom: 1px solid var(--line);
+    white-space: nowrap; position: relative; font-variant-numeric: tabular-nums;
+  }
+  /* A hairline under each figure, proportional to the largest line — enough to
+     read the shape of the budget without turning the table into a chart. */
+  .bar {
+    position: absolute; right: 0; bottom: 0; height: 2px;
+    width: var(--w); background: var(--red); opacity: 0.5;
+  }
 
   .join .btn {
     display: inline-block; margin-top: 0.4rem; padding: 0.6rem 1.1rem;
