@@ -45,7 +45,7 @@ const normAddr = (s: string | null | undefined) =>
 // Photos carry E911's uppercase town ("SOUTH BURLINGTON"); Airtable's roster is
 // title-case ("South Burlington"). Compare on a normalised form, and treat
 // Saint/St alike — that difference silently dropped both St. Albans photos once.
-const normTown = (s: string | null | undefined) =>
+export const normTown = (s: string | null | undefined) =>
   (s ?? '').toUpperCase().replace(/\b(SAINT|ST\.?)\b/g, 'ST')
     .replace(/[^A-Z0-9 ]/g, ' ').replace(/\s+/g, ' ').trim();
 

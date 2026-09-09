@@ -287,3 +287,56 @@ if (orphaned.length) {
 
 const noReason = retired.filter((r) => !r.reason).length;
 console.log(`Retired: ${retired.length} -> src/data/retired-stations.json${noReason ? `  (${noReason} with no reason recorded)` : ''}`);
+
+// --- Departments, for the town pages ---------------------------------------
+// The station roster answers "what buildings are there"; this answers "who
+// works out of them, and on what terms". Everything below the headcounts is
+// prose typed into Airtable with its source named in the text — the site
+// renders it, it does not invent it, and a blank field renders as nothing
+// rather than as a guess.
+const num = (v) => (typeof v === 'number' ? v : null);
+const str = (v) => {
+  const s = (v ?? '').toString().trim();
+  return s || null;
+};
+
+const departments = depts
+  .filter((r) => r.fields.Status !== 'Retired')
+  .map((r) => {
+    const f = r.fields;
+    return {
+      id: r.id,
+      name: f['Department Name'] ?? '',
+      town: f.City ?? '',
+      county: f.County ?? '',
+      fdid: str(f.FDID),
+      type: str(f['Department Type']),
+      stations: num(f['Number of Stations']),
+      founded: num(f['Year Founded']),
+      chief: str(f['Chief Name']),
+      phone: str(f['Phone Number']),
+      email: str(f.Email),
+      website: str(f.Website),
+      joinUrl: str(f['Join URL']),
+      // Airtable's column names carry a leading space; keep the lookup literal
+      // rather than trimming keys, so a rename fails loudly instead of quietly.
+      members: {
+        volunteer: num(f[' Active Firefighters - Volunteer']),
+        paidPerCall: num(f[' Active Firefighters - Paid per Call']),
+        career: num(f[' Active Firefighters - Career']),
+      },
+      joining: str(f.Joining),
+      burnPermits: str(f['Burn Permits']),
+      history: str(f.History),
+      callsNote: str(f['Calls Note']),
+      budgetNote: str(f['Budget Note']),
+    };
+  })
+  .sort((a, b) => a.town.localeCompare(b.town) || a.name.localeCompare(b.name));
+
+writeFileSync(`${ROOT}/src/data/departments.json`, JSON.stringify(departments, null, 2) + '\n');
+const PROSE = ['joining', 'burnPermits', 'history', 'callsNote', 'budgetNote'];
+const detailed = departments.filter((d) => PROSE.some((k) => d[k])).length;
+console.log(
+  `Departments: ${departments.length} -> src/data/departments.json  (${detailed} with written detail)`,
+);

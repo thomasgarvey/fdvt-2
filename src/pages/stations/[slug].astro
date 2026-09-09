@@ -1,6 +1,7 @@
 ---
 import Archive from "../../layouts/Archive.astro";
 import { stations, titleCase, type Station } from "../../lib/stations";
+import { townSlugForStation } from "../../lib/towns";
 
 export function getStaticPaths() {
   return stations.map((station) => ({ params: { slug: station.slug }, props: { station } }));
@@ -8,6 +9,7 @@ export function getStaticPaths() {
 
 const { station } = Astro.props as { station: Station };
 const p = station.photo;
+const townHref = `/towns/${townSlugForStation(station)}`;
 
 // Neighbouring stations in the same town, so a multi-station department is
 // navigable rather than a set of orphan pages.
@@ -39,7 +41,7 @@ const description = p
     <nav class="crumbs" aria-label="Breadcrumb">
       <a href="/stations">All stations</a>
       <span aria-hidden="true">/</span>
-      <span>{station.town}</span>
+      <a href={townHref}>{station.town}</a>
     </nav>
 
     <header class="head">
@@ -114,6 +116,10 @@ const description = p
       </section>
     )}
 
+    <p class="totown">
+      <a href={townHref}>The department, its coverage and how to join, in {station.town} →</a>
+    </p>
+
     <p class="back"><a href="/#map">← Back to the map</a></p>
   </main>
 </Archive>
@@ -171,6 +177,12 @@ const description = p
   .siblings a:hover { color: var(--red); }
   .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; background: var(--ink-3); }
   .dot[data-has="yes"] { background: var(--red); }
+  .totown {
+    margin: 0 0 1.4rem; padding: 0.9rem 1.1rem;
+    border-left: 2px solid var(--brass); background: var(--surface); font-size: 0.94rem;
+  }
+  .totown a { color: var(--red); text-decoration: none; }
+  .totown a:hover { text-decoration: underline; }
   .back { font-size: 0.88rem; margin: 0; }
   @media (max-width: 560px) {
     .row { grid-template-columns: 1fr; gap: 0.1rem; }

@@ -1,0 +1,295 @@
+---
+import Archive from "../../layouts/Archive.astro";
+import {
+  BURN_RULE,
+  memberCount,
+  outlinePath,
+  towns,
+  type Town,
+} from "../../lib/towns";
+
+export function getStaticPaths() {
+  return towns.map((town) => ({ params: { slug: town.slug }, props: { town } }));
+}
+
+const { town } = Astro.props as { town: Town };
+const dept = town.departments[0] ?? null;
+const members = memberCount(town);
+const photo = town.stations.find((s) => s.photo)?.photo ?? null;
+
+// One outline, with a dot for every station in the town. Drawn from the same
+// coordinates the map uses, so a station cannot appear outside its own town
+// line without that being true of the data.
+const outline = town.boundary ? outlinePath(town.boundary.rings) : null;
+const pins = outline
+  ? town.stations.map((s) => {
+      const [x, y] = outline.project(s.lng, s.lat);
+      return { x, y, has: !!s.photo, address: s.address };
+    })
+  : [];
+
+const num = (n: number) => n.toLocaleString("en-US");
+
+// Only facts we hold. A row we cannot fill is left out rather than shown empty,
+// which would read as a claim that the answer is nothing.
+const facts: [string, string][] = [
+  ["Stations", String(town.stations.length)],
+  ["Photographed", `${town.photographed} of ${town.stations.length}`],
+  town.boundary ? ["Area", `${num(town.boundary.acres)} acres · ${town.boundary.sqmi} sq mi`] : null,
+  members != null ? ["Firefighters", String(members)] : null,
+  dept?.type ? ["Department type", dept.type] : null,
+  dept?.fdid ? ["FDID", dept.fdid] : null,
+  dept?.founded ? ["Founded", String(dept.founded)] : null,
+].filter(Boolean) as [string, string][];
+
+// What is written up, and what is still blank. Drives both the page body and
+// the honest note at the bottom about what is missing.
+const written = [
+  ["History", dept?.history],
+  ["Joining", dept?.joining],
+  ["Burn permits", dept?.burnPermits],
+  ["Call volume", dept?.callsNote],
+  ["Budget", dept?.budgetNote],
+] as const;
+const missing = written.filter(([, v]) => !v).map(([k]) => k);
+
+const title = `${town.name} — fire stations, department and coverage – Vermont Fire Stations`;
+const description = dept
+  ? `${dept.name}: contact, coverage, joining, burn permits and history, with ${town.stations.length} station${town.stations.length === 1 ? "" : "s"} in ${town.name}, Vermont.`
+  : `Fire stations in ${town.name}, Vermont — ${town.stations.length} on record, with the town's boundary and area.`;
+---
+
+<Archive title={title} description={description}>
+  <main class="wrap page">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="/stations">All stations</a>
+      <span aria-hidden="true">/</span>
+      <span>{town.name}</span>
+    </nav>
+
+    <header class="head">
+      <p class="stamp">{town.county && `${town.county} County`}</p>
+      <h1>{town.name}</h1>
+      {dept && <p class="sub">{town.departments.map((d) => d.name).join(" · ")}</p>}
+    </header>
+
+    <div class="top">
+      <div class="facts">
+        <dl>
+          {facts.map(([k, v]) => (
+            <div class="row"><dt>{k}</dt><dd>{v}</dd></div>
+          ))}
+        </dl>
+      </div>
+
+      {outline && (
+        <figure class="outline">
+          <svg viewBox={`0 0 ${outline.size} ${outline.size}`} role="img"
+               aria-label={`Outline of ${town.name}, with its fire stations marked`}>
+            <path d={outline.d} class="shape" />
+            {pins.map((p) => (
+              <circle cx={p.x} cy={p.y} r="4.5" class={p.has ? "pin has" : "pin"}>
+                <title>{p.address}</title>
+              </circle>
+            ))}
+          </svg>
+          <figcaption>
+            Town boundary from VCGI. Fire district boundaries are not the same as town
+            lines — mutual aid, village districts and contracted coverage all cross them.
+          </figcaption>
+        </figure>
+      )}
+    </div>
+
+    {photo && (
+      <figure class="shot">
+        <img src={photo.src} alt={`Fire station in ${town.name}, Vermont`}
+             width={photo.width ?? undefined} height={photo.height ?? undefined} loading="lazy" />
+        <figcaption>
+          {photo.caption && <span class="cap">{photo.caption}</span>}
+          <span class="credit">
+            {photo.photographer ? `Photograph by ${photo.photographer}` : "Photograph"}
+            {photo.dateTaken && `, ${photo.dateTaken}`}
+          </span>
+        </figcaption>
+      </figure>
+    )}
+
+    <section class="block" aria-labelledby="st-h">
+      <h2 id="st-h">Stations</h2>
+      <ul class="stations">
+        {town.stations.map((s) => (
+          <li>
+            <a href={`/stations/${s.slug}`}>
+              <span class="dot" data-has={s.photo ? "yes" : "no"} aria-hidden="true"></span>
+              <span class="nm">{s.name}</span>
+              <span class="ad">{s.address}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    {dept && (dept.chief || dept.phone || dept.email || dept.website) && (
+      <section class="block" aria-labelledby="c-h">
+        <h2 id="c-h">Contact</h2>
+        <dl>
+          {dept.chief && <div class="row"><dt>Chief</dt><dd>{dept.chief}</dd></div>}
+          {dept.phone && (
+            <div class="row"><dt>Telephone</dt>
+              <dd><a href={`tel:${dept.phone.replace(/[^0-9+]/g, "")}`}>{dept.phone}</a></dd></div>
+          )}
+          {dept.email && (
+            <div class="row"><dt>Email</dt>
+              <dd><a href={`mailto:${dept.email}`}>{dept.email}</a></dd></div>
+          )}
+          {dept.website && (
+            <div class="row"><dt>Website</dt>
+              <dd><a href={dept.website} rel="noopener">{dept.website.replace(/^https?:\/\//, "")}</a></dd></div>
+          )}
+        </dl>
+        <p class="fine">
+          In an emergency dial 911. These are business lines.
+        </p>
+      </section>
+    )}
+
+    {dept?.history && (
+      <section class="block" aria-labelledby="h-h">
+        <h2 id="h-h">History</h2>
+        {dept.history.split("\n\n").map((p) => <p>{p}</p>)}
+      </section>
+    )}
+
+    {dept?.callsNote && (
+      <section class="block" aria-labelledby="ca-h">
+        <h2 id="ca-h">Calls</h2>
+        {dept.callsNote.split("\n\n").map((p) => <p>{p}</p>)}
+      </section>
+    )}
+
+    {dept?.budgetNote && (
+      <section class="block" aria-labelledby="b-h">
+        <h2 id="b-h">Money</h2>
+        {dept.budgetNote.split("\n\n").map((p) => <p>{p}</p>)}
+      </section>
+    )}
+
+    <section class="block" aria-labelledby="bp-h">
+      <h2 id="bp-h">Burning</h2>
+      {dept?.burnPermits
+        ? dept.burnPermits.split("\n\n").map((p) => <p>{p}</p>)
+        : <p>{BURN_RULE}</p>}
+    </section>
+
+    {dept?.joining && (
+      <section class="block join" aria-labelledby="j-h">
+        <h2 id="j-h">Joining</h2>
+        {dept.joining.split("\n\n").map((p) => <p>{p}</p>)}
+        {dept.joinUrl && (
+          <p><a class="btn" href={dept.joinUrl} rel="noopener">Apply to {dept.name} →</a></p>
+        )}
+      </section>
+    )}
+
+    {missing.length > 0 && (
+      <section class="block gap" aria-labelledby="g-h">
+        <h2 id="g-h">Not recorded yet</h2>
+        <p>
+          Nothing is written up here for <strong>{missing.join(", ").toLowerCase()}</strong>.
+          Not because it does not exist — because nobody has typed it in. If you know this
+          department, <a href="/contact">tell us</a> and it goes on the record with its
+          source named.
+        </p>
+      </section>
+    )}
+
+    <p class="back"><a href="/#map">← Back to the map</a></p>
+  </main>
+</Archive>
+
+<style>
+  .page { padding: 2.4rem 0 3.4rem; max-width: 46rem; }
+  .crumbs {
+    font-size: 0.72rem; letter-spacing: 0.11em; text-transform: uppercase;
+    color: var(--ink-3); display: flex; gap: 0.5rem; margin-bottom: 1.4rem;
+  }
+  .crumbs a { color: var(--ink-2); text-decoration: none; border-bottom: 1px solid transparent; }
+  .crumbs a:hover { color: var(--ink); border-color: var(--red); }
+  .head { margin-bottom: 1.8rem; }
+  .stamp {
+    font-size: 0.72rem; letter-spacing: 0.11em; text-transform: uppercase;
+    color: var(--ink-3); margin: 0 0 0.3rem;
+  }
+  h1 {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: clamp(1.8rem, 5vw, 2.6rem); line-height: 1.1; margin: 0 0 0.35rem;
+  }
+  .sub { margin: 0; color: var(--ink-2); font-size: 0.95rem; }
+
+  .top { display: grid; grid-template-columns: 1fr 300px; gap: 2rem; align-items: start; margin-bottom: 2.2rem; }
+  .outline { margin: 0; }
+  .outline svg { width: 100%; height: auto; display: block; }
+  .shape { fill: var(--surface); stroke: var(--ink-3); stroke-width: 1.5; }
+  .pin { fill: var(--ink-3); stroke: var(--paper, #fff); stroke-width: 1.5; }
+  .pin.has { fill: var(--red); }
+  .outline figcaption { margin-top: 0.5rem; font-size: 0.76rem; color: var(--ink-3); line-height: 1.45; }
+
+  .shot { margin: 0 0 2.4rem; }
+  .shot img { display: block; width: 100%; height: auto; border: 1px solid var(--line); box-shadow: var(--shadow); }
+  .shot figcaption { margin-top: 0.6rem; font-size: 0.82rem; color: var(--ink-2); }
+  .cap { display: block; }
+  .credit { display: block; color: var(--ink-3); }
+
+  .block { margin-bottom: 2.2rem; }
+  h2 {
+    font-family: "Source Serif 4", Georgia, serif; font-size: 1.15rem;
+    margin: 0 0 0.9rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--line);
+  }
+  .block p { margin: 0 0 0.9rem; max-width: 58ch; }
+  .block p:last-child { margin-bottom: 0; }
+  dl { margin: 0; }
+  .row {
+    display: grid; grid-template-columns: 12rem 1fr; gap: 0.5rem;
+    padding: 0.42rem 0; border-bottom: 1px solid var(--line);
+  }
+  dt {
+    font-size: 0.72rem; letter-spacing: 0.09em; text-transform: uppercase;
+    color: var(--ink-3); align-self: center;
+  }
+  dd { margin: 0; font-size: 0.94rem; }
+  dd a { color: var(--red); }
+  .fine { font-size: 0.8rem; color: var(--ink-3); margin: 0.8rem 0 0; }
+
+  .stations { list-style: none; margin: 0; padding: 0; }
+  .stations li { border-bottom: 1px solid var(--line); }
+  .stations a {
+    display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 0.7rem;
+    padding: 0.6rem 0; text-decoration: none; color: var(--ink); font-size: 0.94rem;
+  }
+  .stations a:hover .nm { color: var(--red); }
+  .ad { color: var(--ink-3); font-size: 0.86rem; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; background: var(--ink-3); }
+  .dot[data-has="yes"] { background: var(--red); }
+
+  .join .btn {
+    display: inline-block; margin-top: 0.4rem; padding: 0.6rem 1.1rem;
+    background: var(--red); color: #fff; text-decoration: none; font-size: 0.9rem;
+  }
+  .join .btn:hover { filter: brightness(1.08); }
+
+  .gap { border-left: 2px solid var(--brass); padding-left: 1.2rem; }
+  .gap h2 { border-bottom: none; padding-bottom: 0; }
+  .gap a { color: var(--red); }
+
+  .back { font-size: 0.88rem; margin: 0; }
+  .back a { color: var(--red); }
+
+  @media (max-width: 720px) {
+    .top { grid-template-columns: 1fr; gap: 1.4rem; }
+    .outline { max-width: 300px; }
+    .row { grid-template-columns: 1fr; gap: 0.1rem; }
+    .stations a { grid-template-columns: auto 1fr; }
+    .ad { grid-column: 2; }
+  }
+</style>
