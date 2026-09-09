@@ -1,7 +1,7 @@
 ---
 import Archive from "../../layouts/Archive.astro";
 import { stations, titleCase, type Station } from "../../lib/stations";
-import { townSlugForStation } from "../../lib/towns";
+import { townBySlug, townSlugForStation } from "../../lib/towns";
 
 export function getStaticPaths() {
   return stations.map((station) => ({ params: { slug: station.slug }, props: { station } }));
@@ -9,7 +9,15 @@ export function getStaticPaths() {
 
 const { station } = Astro.props as { station: Station };
 const p = station.photo;
-const townHref = `/towns/${townSlugForStation(station)}`;
+const townSlug = townSlugForStation(station);
+const townHref = `/towns/${townSlug}`;
+// Name the department in the link where we know it — "Richmond Fire Department"
+// is a reason to click, "the town page" is not. Where the building carries the
+// same name as the department, repeating it under the heading reads as a
+// stutter, so fall back to naming the place instead.
+const deptName = townBySlug.get(townSlug)?.departments[0]?.name ?? null;
+const townDept =
+  deptName && deptName !== station.name ? deptName : `The department in ${station.town}`;
 
 // Neighbouring stations in the same town, so a multi-station department is
 // navigable rather than a set of orphan pages.
@@ -47,9 +55,17 @@ const description = p
     <header class="head">
       <h1>{station.name}</h1>
       <p class="sub">
-        {station.address} · {station.town}{station.county && `, ${station.county} County`}
+        {station.address} · <a href={townHref}>{station.town}</a>{station.county && `, ${station.county} County`}
       </p>
     </header>
+
+    <a class="totown" href={townHref}>
+      <span class="tt-k">{townDept}</span>
+      <span class="tt-v">
+        Contact, coverage, budget, burn permits and how to join
+      </span>
+      <span class="tt-go" aria-hidden="true">→</span>
+    </a>
 
     {p ? (
       <figure class="shot">
@@ -116,10 +132,6 @@ const description = p
       </section>
     )}
 
-    <p class="totown">
-      <a href={townHref}>The department, its coverage and how to join, in {station.town} →</a>
-    </p>
-
     <p class="back"><a href="/#map">← Back to the map</a></p>
   </main>
 </Archive>
@@ -177,12 +189,22 @@ const description = p
   .siblings a:hover { color: var(--red); }
   .dot { width: 9px; height: 9px; border-radius: 50%; flex: none; background: var(--ink-3); }
   .dot[data-has="yes"] { background: var(--red); }
+  /* The route from a building to the department that works out of it. It sits
+     above the record because that is the question people arrive with, and it
+     was unfindable at the foot of the page. */
   .totown {
-    margin: 0 0 1.4rem; padding: 0.9rem 1.1rem;
-    border-left: 2px solid var(--brass); background: var(--surface); font-size: 0.94rem;
+    display: grid; grid-template-columns: 1fr auto; align-items: center;
+    gap: 0.15rem 1rem; margin: 0 0 2rem; padding: 0.95rem 1.15rem;
+    border: 1px solid var(--line); border-left: 3px solid var(--red);
+    background: var(--surface); text-decoration: none; color: var(--ink);
   }
-  .totown a { color: var(--red); text-decoration: none; }
-  .totown a:hover { text-decoration: underline; }
+  .totown:hover { border-left-color: var(--red); background: var(--paper, #fff); }
+  .totown:hover .tt-k { color: var(--red); }
+  .tt-k { font-size: 1rem; font-weight: 600; }
+  .tt-v { font-size: 0.85rem; color: var(--ink-2); }
+  .tt-go { grid-row: 1 / 3; grid-column: 2; color: var(--red); font-size: 1.1rem; }
+  .sub a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--red); }
+  .sub a:hover { color: var(--red); }
   .back { font-size: 0.88rem; margin: 0; }
   @media (max-width: 560px) {
     .row { grid-template-columns: 1fr; gap: 0.1rem; }
