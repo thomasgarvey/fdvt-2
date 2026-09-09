@@ -9,7 +9,7 @@
     "esiteid": 74984,
     "address": "282 Ethan Allen Ave",
     "town": "Colchester",
-    "reason": ""
+    "reason": "Not a fire station — checked on the ground. A small single-bay building in the Fort Ethan Allen area. OpenStreetMap has nothing fire-related within 500 metres of the E911 coordinates; the nearest named features are Vermont PBS's studio and a builders' merchant.\n\nThe record was first mapped in 1998 and last updated in April 2025, which is worth noting: a recent update date says nothing about whether the classification was ever right."
   },
   {
     "esiteid": 333310,
@@ -27,7 +27,7 @@
     "esiteid": 240104,
     "address": "30 Lower Welden St",
     "town": "Saint Albans City",
-    "reason": ""
+    "reason": "Duplicate of the station next door. These coordinates sit 25 metres from 32 Lower Welden St (E911 site 241097) — the same firehouse, carried twice in the state file under two site IDs.\n\n32 Lower Welden St is the record we keep, and the St. Albans City photograph that hung off this one has been moved to it."
   },
   {
     "esiteid": 773054,
