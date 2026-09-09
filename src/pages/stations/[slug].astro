@@ -19,7 +19,9 @@ const record: [string, string][] = [
   ["County", station.county ? `${station.county} County` : ""],
   ["ZIP", String(station.zip || "")],
   ["Coordinates", `${station.lat.toFixed(5)}, ${station.lng.toFixed(5)}`],
-  ["E911 site ID", String(station.esiteid)],
+  // Stations added from a photograph have no E911 record. String(null) is
+  // "null", which is truthy, so this has to be emptied before the filter.
+  ["E911 site ID", station.esiteid != null ? String(station.esiteid) : ""],
   ["E911 first mapped", station.mapped],
   ["E911 last updated", station.updated],
 ].filter(([, v]) => v);
@@ -80,9 +82,19 @@ const description = p
         ))}
       </dl>
       <p class="prov">
-        Location data from the <a href="https://geodata.vermont.gov/" rel="noopener">Vermont
-        E911 site file (VCGI)</a>. Spotted something wrong?
-        <a href="/contact">Send a correction</a>.
+        {station.esiteid != null ? (
+          <>
+            Location data from the <a href="https://geodata.vermont.gov/" rel="noopener">Vermont
+            E911 site file (VCGI)</a>.{" "}
+          </>
+        ) : (
+          <>
+            This station is <strong>not</strong> in the{" "}
+            <a href="https://geodata.vermont.gov/" rel="noopener">Vermont E911 site file</a>; it
+            was added here from a photograph taken at the building.{" "}
+          </>
+        )}
+        Spotted something wrong? <a href="/contact">Send a correction</a>.
       </p>
     </section>
 

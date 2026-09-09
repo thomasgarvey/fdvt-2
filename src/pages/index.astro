@@ -21,9 +21,14 @@ const emptyCounties = [...new Set(stations.map((s) => s.county).filter(Boolean))
 // The one town we have been through door to door, and the clearest evidence that
 // the state's list has to be checked on foot. Derived from the two data files so
 // the sentence in the About section cannot go stale as more are retired.
+// Count only stations that carry an E911 site id: the roster also holds
+// buildings we added from a photograph because the state file omits them, and
+// counting those would overstate what the state actually lists.
 const FIELD_TOWN = "Colchester";
 const fieldWrong = retiredStations.filter((s) => s.town === FIELD_TOWN).length;
-const fieldListed = fieldWrong + stations.filter((s) => s.town === FIELD_TOWN).length;
+const fieldListed =
+  fieldWrong +
+  stations.filter((s) => s.town === FIELD_TOWN && s.esiteid != null).length;
 
 const ledger = [
   { n: stations.length, label: "Stations recorded" },

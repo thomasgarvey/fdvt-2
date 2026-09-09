@@ -715,6 +715,19 @@
     "updated": "2023-01-27"
   },
   {
+    "id": "recspb9sqEfXm0yQ3",
+    "esiteid": null,
+    "name": "Colchester Rescue",
+    "address": "687 Blakely Rd",
+    "town": "Colchester",
+    "county": "Chittenden",
+    "zip": "05446",
+    "lat": 44.53731,
+    "lng": -73.207134,
+    "mapped": "",
+    "updated": ""
+  },
+  {
     "id": "recYCfX7MJ3C4C1UA",
     "esiteid": 73511,
     "name": null,
@@ -1298,6 +1311,19 @@
     "lng": -72.407896,
     "mapped": "1998-01-01",
     "updated": "2023-01-28"
+  },
+  {
+    "id": "rec44wLaPet22VYzA",
+    "esiteid": null,
+    "name": "Highgate Fire Department",
+    "address": "2996 VT Route 78",
+    "town": "Highgate",
+    "county": "Franklin",
+    "zip": "05459",
+    "lat": 44.938071,
+    "lng": -73.046867,
+    "mapped": "",
+    "updated": ""
   },
   {
     "id": "recYww46wSKZ3kye7",
@@ -2845,6 +2871,19 @@
     "lng": -72.01247,
     "mapped": "2016-06-10",
     "updated": "2023-03-28"
+  },
+  {
+    "id": "recaEc9CoSmLaJecN",
+    "esiteid": null,
+    "name": "Swanton Village Fire Department",
+    "address": "120 1st St",
+    "town": "Swanton",
+    "county": "Franklin",
+    "zip": "05488",
+    "lat": 44.920692,
+    "lng": -73.112981,
+    "mapped": "",
+    "updated": ""
   },
   {
     "id": "rec3eYMa76FtN9g0V",

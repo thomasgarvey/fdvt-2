@@ -48,6 +48,30 @@
     "esiteid": 248263
   },
   {
+    "id": "recD1VKYDInUtOuAG",
+    "src": "/photos/recD1VKYDInUtOuAG.jpg",
+    "thumb": "/photos/recD1VKYDInUtOuAG.thumb.jpg",
+    "width": 1202,
+    "height": 1602,
+    "thumbWidth": 512,
+    "thumbHeight": 682,
+    "caption": "Monkton Fire Department",
+    "photographer": "T. Garvey",
+    "dateTaken": "2026-09-04",
+    "featured": false,
+    "department": {
+      "name": "Monkton Volunteer Fire Department",
+      "city": "Monkton",
+      "county": "Addison"
+    },
+    "town": "MONKTON",
+    "lat": null,
+    "lng": null,
+    "stationAddress": "3747 States Prison Hollow Rd",
+    "placedBy": "station-link",
+    "esiteid": 162742
+  },
+  {
     "id": "recSOEMW0gKkZTFOD",
     "src": "/photos/recSOEMW0gKkZTFOD.jpg",
     "thumb": "/photos/recSOEMW0gKkZTFOD.thumb.jpg",
@@ -67,9 +91,9 @@
     "town": "HUNTINGTON",
     "lat": null,
     "lng": null,
-    "stationAddress": "4960 Main Rd",
-    "placedBy": "station-link",
-    "esiteid": 131592
+    "stationAddress": "4930 Main Rd",
+    "placedBy": "address-join",
+    "esiteid": null
   },
   {
     "id": "recdwPKd1wnt3dAAn",
@@ -84,12 +108,12 @@
     "dateTaken": "2026-09-04",
     "featured": false,
     "department": null,
-    "town": "MONKTON",
+    "town": null,
     "lat": null,
     "lng": null,
-    "stationAddress": "3747 States Prison Hollow Rd",
-    "placedBy": "station-link",
-    "esiteid": 162742
+    "stationAddress": null,
+    "placedBy": "unplaced",
+    "esiteid": null
   },
   {
     "id": "recf93em2ZU9vjsBO",
@@ -138,6 +162,30 @@
     "stationAddress": "10340 VT Route 116",
     "placedBy": "station-link",
     "esiteid": 129071
+  },
+  {
+    "id": "recnGsxktZvFEV0ks",
+    "src": "/photos/recnGsxktZvFEV0ks.jpg",
+    "thumb": "/photos/recnGsxktZvFEV0ks.thumb.jpg",
+    "width": 906,
+    "height": 1208,
+    "thumbWidth": 512,
+    "thumbHeight": 683,
+    "caption": "Huntington Fire Department",
+    "photographer": "T. Garvey",
+    "dateTaken": "2026-09-04",
+    "featured": false,
+    "department": {
+      "name": "Huntington VFD",
+      "city": "Huntington",
+      "county": "Chittenden"
+    },
+    "town": "HUNTINGTON",
+    "lat": null,
+    "lng": null,
+    "stationAddress": "4960 Main Rd",
+    "placedBy": "station-link",
+    "esiteid": 131592
   },
   {
     "id": "recyqPmCKRhM5bodl",
@@ -255,8 +303,8 @@
     "town": null,
     "lat": 44.938071000003,
     "lng": -73.046866500001,
-    "stationAddress": "2996 VT-78, Highgate Center",
-    "placedBy": "address-join",
+    "stationAddress": "2996 VT Route 78",
+    "placedBy": "station-link",
     "esiteid": null
   },
   {
@@ -352,7 +400,7 @@
     "lat": 44.920692000003,
     "lng": -73.112980500001,
     "stationAddress": "120 1st St",
-    "placedBy": "address-join",
+    "placedBy": "station-link",
     "esiteid": null
   },
   {
@@ -656,7 +704,7 @@
     "lat": 44.537310000003,
     "lng": -73.207134000001,
     "stationAddress": "687 Blakely Rd",
-    "placedBy": "address-join",
+    "placedBy": "station-link",
     "esiteid": null
   },
   {
@@ -680,7 +728,7 @@
     "lat": 44.537310000003,
     "lng": -73.207134000001,
     "stationAddress": "687 Blakely Rd",
-    "placedBy": "address-join",
+    "placedBy": "station-link",
     "esiteid": null
   },
   {
