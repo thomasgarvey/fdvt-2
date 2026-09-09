@@ -50,7 +50,7 @@ const photographed = towns.reduce((n, t) => n + t.photographed, 0);
         <ul>
           {list.map((t) => (
             <li>
-              <a href={`/towns/${t.slug}`}>
+              <a href={`/departments/${t.slug}`}>
                 <span class="nm">
                   {/* The department is the subject; the town is where to find it.
                       Towns with no department on record still get a row, because

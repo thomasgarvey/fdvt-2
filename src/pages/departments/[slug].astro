@@ -178,7 +178,7 @@ const description = dept
           )}
           {dept.website && (
             <div class="row"><dt>Website</dt>
-              <dd><a href={dept.website} rel="noopener">{dept.website.replace(/^https?:\/\//, "")}</a></dd></div>
+              <dd><a href={dept.website} target="_blank" rel="noopener">{dept.website.replace(/^https?:\/\//, "")}</a></dd></div>
           )}
         </dl>
         <p class="fine">
@@ -244,7 +244,7 @@ const description = dept
         <h2 id="j-h">Joining</h2>
         {dept.joining.split("\n\n").map((p) => <p>{p}</p>)}
         {dept.joinUrl && (
-          <p><a class="btn" href={dept.joinUrl} rel="noopener">Apply to {dept.name} →</a></p>
+          <p><a class="btn" href={dept.joinUrl} target="_blank" rel="noopener">Apply to {dept.name} →</a></p>
         )}
       </section>
     )}

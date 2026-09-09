@@ -20,7 +20,7 @@ L.Icon.Default.mergeOptions({
 });
 
 const OSM_TILE = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-const OSM_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors';
+const OSM_ATTR = '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors';
 
 // Photo-to-station matching lives in lib/stations.ts; this component reads the
 // resolved result so the map, the station pages and the search cannot disagree.

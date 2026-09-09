@@ -10,7 +10,7 @@ export function getStaticPaths() {
 const { station } = Astro.props as { station: Station };
 const p = station.photo;
 const townSlug = townSlugForStation(station);
-const townHref = `/towns/${townSlug}`;
+const townHref = `/departments/${townSlug}`;
 // Name the department in the link where we know it — "Richmond Fire Department"
 // is a reason to click, "the town page" is not. Where the building carries the
 // same name as the department, repeating it under the heading reads as a
@@ -102,13 +102,13 @@ const description = p
       <p class="prov">
         {station.esiteid != null ? (
           <>
-            Location data from the <a href="https://geodata.vermont.gov/" rel="noopener">Vermont
+            Location data from the <a href="https://geodata.vermont.gov/" target="_blank" rel="noopener">Vermont
             E911 site file (VCGI)</a>.{" "}
           </>
         ) : (
           <>
             This station is <strong>not</strong> in the{" "}
-            <a href="https://geodata.vermont.gov/" rel="noopener">Vermont E911 site file</a>; it
+            <a href="https://geodata.vermont.gov/" target="_blank" rel="noopener">Vermont E911 site file</a>; it
             was added here from a photograph taken at the building.{" "}
           </>
         )}

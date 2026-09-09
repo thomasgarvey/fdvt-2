@@ -38,7 +38,7 @@ const counties = new Set(stations.map((s) => s.county).filter(Boolean)).size;
       const first = towns.findIndex(([t]) => t[0] === letter) === i;
       return (
         <section class="town" id={first ? `letter-${letter}` : undefined}>
-          <h2><a href={`/towns/${townSlugForStation(list[0])}`}>{town}</a></h2>
+          <h2><a href={`/departments/${townSlugForStation(list[0])}`}>{town}</a></h2>
           <ul>
             {list.map((s) => (
               <li>
