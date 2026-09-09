@@ -480,6 +480,22 @@ const MARK_NEEDS = "#5C6469";
   * {
     box-sizing: border-box;
   }
+  /* Matches the rule in Archive.astro — the homepage does not use that layout,
+     so the marker has to be declared here too. See the note there. */
+  a[target="_blank"]::after {
+    content: "\2197";
+    font-size: 0.76em;
+    line-height: 1;
+    margin-left: 0.16em;
+    vertical-align: 0.14em;
+    opacity: 0.65;
+  }
+  @supports (content: "a" / "b") {
+    a[target="_blank"]::after { content: "\2197" / ""; }
+  }
+  .leaflet-container a[target="_blank"]::after,
+  a.btn[target="_blank"]::after { content: none; }
+
   body {
     margin: 0;
     background-color: var(--paper);

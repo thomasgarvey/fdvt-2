@@ -167,6 +167,26 @@ import Analytics from "../components/Analytics.astro";
     --charcoal: #14100e;
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.45), 0 14px 34px rgba(0, 0, 0, 0.4);
   }
+/* A link that opens a new tab changes context without warning, so mark it.
+     Decorative only: the "/ ''" gives the glyph empty alt text so screen readers
+     do not read out an arrow. Older engines reject that syntax, hence the plain
+     declaration first and the @supports override after. */
+  a[target="_blank"]::after {
+    content: "\2197";
+    font-size: 0.76em;
+    line-height: 1;
+    margin-left: 0.16em;
+    vertical-align: 0.14em;
+    opacity: 0.65;
+  }
+  @supports (content: "a" / "b") {
+    a[target="_blank"]::after { content: "\2197" / ""; }
+  }
+  /* Leaflet's attribution is ten pixels of credit in the map corner, and the
+     apply button already ends in an arrow of its own. */
+  .leaflet-container a[target="_blank"]::after,
+  a.btn[target="_blank"]::after { content: none; }
+
 body {
     margin: 0;
     background: var(--paper);
