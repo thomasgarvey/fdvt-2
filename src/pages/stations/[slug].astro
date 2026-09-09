@@ -55,7 +55,7 @@ const description = p
     <header class="head">
       <h1>{station.name}</h1>
       <p class="sub">
-        {station.address} · <a href={townHref}>{station.town}</a>{station.county && `, ${station.county} County`}
+        {station.address} · {station.town}{station.county && `, ${station.county} County`}
       </p>
     </header>
 

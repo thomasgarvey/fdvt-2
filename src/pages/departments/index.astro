@@ -14,6 +14,23 @@ const counties = [...byCounty.entries()].sort((a, b) => a[0].localeCompare(b[0])
 
 // A town counts as written up when somebody has typed in any of the five prose
 // sections. That is the work Richmond models, and the gap is the point.
+// 162 of 169 departments are named after the town they serve, so printing both
+// is a stutter. The other 7 are worth the second line — Burlington Airport Fire
+// Department is in South Burlington, Bolton's is in Waterbury — and those are
+// exactly the rows where somebody would otherwise think we had it wrong.
+// Punctuation has to go before the abbreviations, or "St." never matches
+// "Saint" — the word boundary after the full stop does not exist.
+const norm = (s: string) =>
+  s
+    .toUpperCase()
+    .replace(/[^A-Z0-9 ]/g, " ")
+    .replace(/\b(SAINT|ST)\b/g, "ST")
+    .replace(/\b(MOUNT|MT)\b/g, "MT")
+    .replace(/\s+/g, " ")
+    .trim();
+const townAdds = (t: (typeof towns)[number]) =>
+  t.departments.length > 0 && !t.departments.some((d) => norm(d.name).includes(norm(t.name)));
+
 const isWritten = (t: (typeof towns)[number]) =>
   t.departments.some((d) => d.history || d.joining || d.burnPermits || d.callsNote || d.budgetNote);
 const written = towns.filter(isWritten).length;
@@ -58,7 +75,7 @@ const photographed = towns.reduce((n, t) => n + t.photographed, 0);
                   {t.departments.length
                     ? t.departments.map((d) => d.name).join(" · ")
                     : `${t.name} — no department recorded`}
-                  {t.departments.length > 0 && <span class="in">{t.name}</span>}
+                  {townAdds(t) && <span class="in">in {t.name}</span>}
                 </span>
                 {isWritten(t) && <span class="badge">Written up</span>}
                 <span class="ct">
