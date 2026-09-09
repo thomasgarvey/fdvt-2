@@ -64,9 +64,23 @@ const description = dept
     </nav>
 
     <header class="head">
-      <p class="stamp">{town.county && `${town.county} County`}</p>
-      <h1>{town.name}</h1>
-      {dept && <p class="sub">{town.departments.map((d) => d.name).join(" · ")}</p>}
+      {/* The department is what the page is about; the town is where it is. With
+          more than one department, or none on record, the town has to lead —
+          there is no single name to put at the top. */}
+      {town.departments.length === 1 ? (
+        <>
+          <p class="stamp">{town.name}{town.county && `, ${town.county} County`}</p>
+          <h1>{town.departments[0].name}</h1>
+        </>
+      ) : (
+        <>
+          <p class="stamp">{town.county && `${town.county} County`}</p>
+          <h1>{town.name}</h1>
+          {town.departments.length > 1 && (
+            <p class="sub">{town.departments.map((d) => d.name).join(" · ")}</p>
+          )}
+        </>
+      )}
     </header>
 
     <div class="facts">

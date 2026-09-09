@@ -1,0 +1,125 @@
+---
+import Archive from "../../layouts/Archive.astro";
+import { towns } from "../../lib/towns";
+
+// Grouped by county, which is how mutual aid is organised and how the town
+// pages draw themselves.
+const byCounty = new Map<string, typeof towns>();
+for (const t of towns) {
+  const c = t.county || "Unrecorded";
+  if (!byCounty.has(c)) byCounty.set(c, []);
+  byCounty.get(c)!.push(t);
+}
+const counties = [...byCounty.entries()].sort((a, b) => a[0].localeCompare(b[0]));
+
+// A town counts as written up when somebody has typed in any of the five prose
+// sections. That is the work Richmond models, and the gap is the point.
+const isWritten = (t: (typeof towns)[number]) =>
+  t.departments.some((d) => d.history || d.joining || d.burnPermits || d.callsNote || d.budgetNote);
+const written = towns.filter(isWritten).length;
+const stationTotal = towns.reduce((n, t) => n + t.stations.length, 0);
+const photographed = towns.reduce((n, t) => n + t.photographed, 0);
+---
+
+<Archive
+  title="Vermont fire departments, town by town – Vermont Fire Stations"
+  description={`Every Vermont town with a fire station on record — ${towns.length} of them, grouped by county, with coverage, contact and department detail where we have it.`}
+>
+  <main class="wrap page">
+    <header class="head">
+      <h1>Fire departments</h1>
+      <p class="sub">
+        The departments that answer for Vermont's {stationTotal} stations, organised by the
+        town each one covers — {towns.length} towns across {counties.length} counties. Every
+        page carries the ground the department covers, its contact, and the stations it works
+        out of.
+        {written === 1
+          ? " One has been written up in full so far: contact, budget, burn permits, joining and history."
+          : ` ${written} have been written up in full so far.`}
+        {" "}<a href="/contact">Help fill in the rest</a>.
+      </p>
+    </header>
+
+    <nav class="atoz" aria-label="Jump to county">
+      {counties.map(([c]) => <a href={`#c-${c.toLowerCase().replace(/\s+/g, "-")}`}>{c}</a>)}
+    </nav>
+
+    {counties.map(([county, list]) => (
+      <section class="county" id={`c-${county.toLowerCase().replace(/\s+/g, "-")}`}>
+        <h2>{county === "Unrecorded" ? "County unrecorded" : `${county} County`}</h2>
+        <ul>
+          {list.map((t) => (
+            <li>
+              <a href={`/towns/${t.slug}`}>
+                <span class="nm">
+                  {/* The department is the subject; the town is where to find it.
+                      Towns with no department on record still get a row, because
+                      the absence is worth seeing. */}
+                  {t.departments.length
+                    ? t.departments.map((d) => d.name).join(" · ")
+                    : `${t.name} — no department recorded`}
+                  {t.departments.length > 0 && <span class="in">{t.name}</span>}
+                </span>
+                {isWritten(t) && <span class="badge">Written up</span>}
+                <span class="ct">
+                  {t.stations.length} station{t.stations.length === 1 ? "" : "s"}
+                  {t.photographed > 0 && ` · ${t.photographed} photographed`}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+
+    <p class="foot">
+      {stationTotal} stations, {photographed} photographed. Looking for a building rather
+      than a town? <a href="/stations">Every station is listed here</a>.
+    </p>
+  </main>
+</Archive>
+
+<style>
+  .page { padding: 2.4rem 0 3.4rem; max-width: 52rem; }
+  .head { margin-bottom: 1.6rem; }
+  h1 {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-size: clamp(1.8rem, 5vw, 2.6rem); line-height: 1.1; margin: 0 0 0.5rem;
+  }
+  .sub { margin: 0; color: var(--ink-2); max-width: 58ch; font-size: 0.96rem; }
+  .sub a, .foot a { color: var(--red); }
+
+  .atoz {
+    display: flex; flex-wrap: wrap; gap: 0.4rem 0.9rem; margin: 0 0 2rem;
+    padding-bottom: 0.9rem; border-bottom: 1px solid var(--line);
+    font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .atoz a { color: var(--ink-2); text-decoration: none; }
+  .atoz a:hover { color: var(--red); }
+
+  .county { margin-bottom: 2rem; scroll-margin-top: 1rem; }
+  .county h2 {
+    font-family: "Source Serif 4", Georgia, serif; font-size: 1.1rem;
+    margin: 0 0 0.6rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--line);
+  }
+  .county ul { list-style: none; margin: 0; padding: 0; }
+  .county li { border-bottom: 1px solid var(--line); }
+  .county a {
+    display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 0.8rem;
+    padding: 0.55rem 0; text-decoration: none; color: var(--ink); font-size: 0.94rem;
+  }
+  .county a:hover .nm { color: var(--red); }
+  .nm { display: flex; flex-direction: column; gap: 0.06rem; }
+  .in { font-size: 0.78rem; color: var(--ink-3); }
+  .ct { color: var(--ink-3); font-size: 0.84rem; text-align: right; }
+  .badge {
+    font-size: 0.66rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--red); border: 1px solid var(--red); padding: 0.1rem 0.42rem;
+  }
+  .foot { margin: 2.4rem 0 0; font-size: 0.9rem; color: var(--ink-2); }
+
+  @media (max-width: 560px) {
+    .county a { grid-template-columns: 1fr auto; }
+    .ct { grid-column: 1 / 3; text-align: left; }
+  }
+</style>
